@@ -14,4 +14,3 @@ def taps_logo_visible(driver_instance):
 def go_to_login_page(driver_instance):
     wait_for_visibility_of_element(driver_instance, my_account_page_header_link)
     driver_instance.find_element(By.ID, my_account_page_header_link).click()
-

@@ -1,7 +1,8 @@
 import unittest
 from selenium import webdriver
 from config.test_settings import TestSettings
-from tests.page_object import main_page, login_page
+from tests.page_object import main_page, login_page, my_account_page
+from time import sleep
 
 
 class Tests(unittest.TestCase):
@@ -16,6 +17,19 @@ class Tests(unittest.TestCase):
 
     def test1_main_page_logo_visible(self):
         self.assertTrue(main_page.taps_logo_visible(self.driver))
+
+    def test2_correct_login(self):
+        main_page.go_to_login_page(self.driver)
+        login_page.correct_login(self.driver)
+        self.assertTrue(my_account_page.my_account_header_visible(self.driver))
+
+    def test3_incorrect_login(self):
+        main_page.go_to_login_page(self.driver)
+        self.assertTrue(login_page.incorrect_login(self.driver))
+
+
+
+
 
 if __name__ == '__main__':
     unittest.main()
