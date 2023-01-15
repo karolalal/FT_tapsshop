@@ -1,4 +1,3 @@
-from selenium.webdriver.common.by import By
 from tests.helpers.DataGenerator import *
 from tests.helpers.support_functions import *
 
