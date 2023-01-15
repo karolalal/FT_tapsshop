@@ -25,6 +25,11 @@ def wait_for_invisibility_of_element(inv_driver_instance, id, time_to_wait=8):
     return inv_elem
 
 
+def wait_for_invisibility_of_element_by_xpath(inv_driver_instance, xpath, time_to_wait=8):
+    inv_elem = WebDriverWait(inv_driver_instance, time_to_wait).until(EC.visibility_of_element_located((By.XPATH, xpath)))
+    return inv_elem
+
+
 def wait_for_visibility_of_element_xpatch(driver_instance, xpatch, time_to_wait=10):
     try:
         elem = WebDriverWait(driver_instance, time_to_wait).until(EC.visibility_of_element_located((By.XPATH, xpatch)))

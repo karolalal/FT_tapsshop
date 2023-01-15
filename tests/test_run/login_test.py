@@ -2,7 +2,6 @@ import unittest
 from selenium import webdriver
 from config.test_settings import TestSettings
 from tests.page_object import main_page, login_page, my_account_page
-from time import sleep
 
 
 class Tests(unittest.TestCase):
